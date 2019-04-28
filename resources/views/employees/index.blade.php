@@ -27,8 +27,8 @@
                     <td>{{$employee->address->number}}</td>
                     <td>{{$employee->address->district}}</td>
                     <td>
-                        <button class="btn btn-success"><i class="far fa-edit text-white"></i></button>
-                        <button class="btn btn-primary"><i class="fas fa-eye"></i></button>
+                        <a href="{{route('employees.edit', $employee->id)}}"><button class="btn btn-success"><i class="far fa-edit text-white"></i></button></a>
+                        <a href="{{route('employees.show', $employee->id)}}"><button class="btn btn-primary"><i class="fas fa-eye"></i></button></a>
                         <button class="btn btn-danger bt-del" data-title="Funcionário" data-route="{{route('employees.destroy', $employee->id)}}" data-item="{{$employee->name}}"><i class="fas fa-trash-alt"></i></button>
                     </td>
                 </tr>

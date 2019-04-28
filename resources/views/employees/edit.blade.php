@@ -6,8 +6,9 @@
     <h3>Funcionário    <i class="fas fa-user"></i></h3>
     <br>
 </div>
-<form action="{{route('employees.store')}}" method="post" enctype="multipart/form-data">
+<form action="{{route('employees.update', $employee->id)}}" method="post" enctype="multipart/form-data">
     @csrf
+    @method('PUT')
     <div class="col-md-12">
         @include('employees._form')
     </div>
