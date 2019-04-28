@@ -16,3 +16,4 @@ Route::get('/', function () {
 });
 
 Route::resource('employees', 'EmployeeController');
+Route::get('modal', 'Controller@modal')->name('modal.delete');
