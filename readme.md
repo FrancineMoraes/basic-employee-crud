@@ -12,6 +12,8 @@ Crud básico para administrar funcionários. O sistema tem a intenção de ser i
 
 You have to run: 
 
+<code>composer install</code>
+
 <code>php artisan migrate</code>
 
 <code>php artisan key:generate</code>
@@ -21,6 +23,8 @@ You have to run:
 ### Como iniciar o projeto
 
 Você deve rodar: 
+
+<code>composer install</code>
 
 <code>php artisan migrate</code>
 
