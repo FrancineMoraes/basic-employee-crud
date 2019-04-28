@@ -55,7 +55,9 @@ class EmployeeController extends Controller
      */
     public function show($id)
     {
-        //
+        $employee = $this->employee->show($id);
+
+        return view('employees.show', compact('employee'));
     }
 
     /**
@@ -66,7 +68,9 @@ class EmployeeController extends Controller
      */
     public function edit($id)
     {
-        //
+        $employee = $this->employee->edit($id);
+
+        return view('employees.edit', compact('employee'));
     }
 
     /**
@@ -78,7 +82,7 @@ class EmployeeController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        return $this->employee->update($request, $id);
     }
 
     /**
