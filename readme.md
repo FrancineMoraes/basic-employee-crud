@@ -1,10 +1,10 @@
-## Employee's manager
+# Employee's manager
 
-### Introduction - English
+### Introduction
 
 Basic crud to administrate employees. This system have the intention to be interactive to the users who will use. The system have functions to list, show, insert, update and delete a employee.
 
-### Introdução - Português
+### Introdução
 
 Crud básico para administrar funcionários. O sistema tem a intenção de ser interativo para os usuários que irão usar. O sistema tem as funções de listar, mostrar, cadastrar, atualizar e deletar um usuário.
 
