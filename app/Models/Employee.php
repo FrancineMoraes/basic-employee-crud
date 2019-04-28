@@ -6,11 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Employee extends Model
 {
-    protected $fillable = ['nam', 'email', 'phone'];
+    protected $fillable = ['name', 'email', 'phone'];
 
     public function address()
     {
-        return $this->hasOne('App\Models\Address');
+        return $this->hasOne('App\Models\Address', 'employee_id');
     }
 
     public function image()
