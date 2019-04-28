@@ -3,12 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Employee;
-use App\Models\Address;
-use App\Models\Image;
+use App\Repositories\EmployeeRepository;
 
 class EmployeeController extends Controller
 {
+    private $employee;
+
+    public function  __construct()
+    {
+        $this->employee = new EmployeeRepository();
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -16,7 +21,9 @@ class EmployeeController extends Controller
      */
     public function index()
     {
-        return view('employees.index');
+        $employees = $this->employee->index();
+
+        return view('employees.index', compact('employees'));
     }
 
     /**
@@ -26,7 +33,7 @@ class EmployeeController extends Controller
      */
     public function create()
     {
-        //
+        return view('employees.create');
     }
 
     /**
@@ -37,7 +44,7 @@ class EmployeeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return $this->employee->store($request);
     }
 
     /**
@@ -82,6 +89,6 @@ class EmployeeController extends Controller
      */
     public function destroy($id)
     {
-        //
+        return $this->employee->destroy($id);
     }
 }
