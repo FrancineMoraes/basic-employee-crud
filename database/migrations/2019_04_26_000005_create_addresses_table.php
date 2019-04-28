@@ -4,17 +4,17 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateImagesTable extends Migration
+class CreateAddressesTable extends Migration
 {
     /**
      * Schema table name to migrate
      * @var string
      */
-    public $tableName = 'images';
+    public $tableName = 'addresses';
 
     /**
      * Run the migrations.
-     * @table images
+     * @table addresses
      *
      * @return void
      */
@@ -23,8 +23,17 @@ class CreateImagesTable extends Migration
         Schema::create($this->tableName, function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('id');
-            $table->string('path', 191);
+            $table->string('cep', 191);
+            $table->string('street', 191);
+            $table->string('number', 191);
+            $table->string('district', 191);
+            $table->string('city', 191);
+            $table->string('state', 191);
+            $table->integer('employee_id')->unsigned();
             $table->timestamps();
+
+            $table->foreign('employee_id')
+                ->references('id')->on('employees');
         });
     }
 
