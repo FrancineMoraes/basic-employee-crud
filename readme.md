@@ -11,13 +11,19 @@ Crud básico para administrar funcionários. O sistema tem a intenção de ser i
 ### How to start the project
 
 You have to run: 
+
 <code>php artisan migrate</code>
+
 <code>php artisan key:generate</code>
+
 <code>php artisan serve</code>
 
 ### Como iniciar o projeto
 
 Você deve rodar: 
+
 <code>php artisan migrate</code>
+
 <code>php artisan key:generate</code>
+
 <code>php artisan serve</code>
