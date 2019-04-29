@@ -23,8 +23,9 @@
                     <a class="nav-link {{(\Request::route()->getName() == 'employees.create' ? 'active' : '')}}" href="{{route('employees.create')}}">Novo</a>
                 </li>
             </ul>
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <form class="form-inline my-2 my-lg-0" action="{{route('employees.search')}}">
+                @csrf
+                <input class="form-control mr-sm-2" type="search" name="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Pesquisar</button>
             </form>
             </div>
