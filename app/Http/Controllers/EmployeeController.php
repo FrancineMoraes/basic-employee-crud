@@ -95,4 +95,24 @@ class EmployeeController extends Controller
     {
         return $this->employee->destroy($id);
     }
+
+    /**
+     * Search the specified resource from storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function search(Request $request)
+    {
+        $employees = $this->employee->search($request);
+
+        if($employees instanceof Request)
+        {
+            return $employees;
+        }
+        else
+        {
+            return view('employees.index', compact('employees'));
+        }
+    }
 }

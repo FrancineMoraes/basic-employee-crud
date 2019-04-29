@@ -65,7 +65,7 @@ class EmployeeRepository
         } 
         catch (\Exception $ex)
         {
-            return redirect()->back()->with('status', 'danger')->with('message', 'Não foi possível visualizar o funcionário, atualize a página e tente novamente.');
+            return redirect()->route('employees.index')->with('status', 'danger')->with('message', 'Não foi possível visualizar o funcionário, atualize a página e tente novamente.');
         }   
 
         return $employee;
@@ -120,7 +120,7 @@ class EmployeeRepository
                 Storage::delete($employee->image->path);
 
                 $path = Storage::put('employees', $request->file('image'));
-                $employee->image()->create([
+                $employee->image()->update([
                     'path' => $path
                 ]);
             }
@@ -154,5 +154,33 @@ class EmployeeRepository
         }
         
         return redirect()->back()->with('status', 'success')->with('message', 'Funcionário deletado com sucesso.');
+    }
+
+    /**
+     * Search the specified resource from storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function search(Request $request)
+    {
+        try
+        {
+            $search = $request->search;
+            
+            $employees = Employee::Orwhere('name', 'like', '%'.$search.'%')
+                ->whereHas('address', function ($query) use ($search){
+                    $query->Orwhere('street', 'like', '%'.$search.'%');
+                    $query->Orwhere('district', 'like', '%'.$search.'%');
+                    $query->Orwhere('city', 'like', '%'.$search.'%');
+                })->get();
+
+            return $employees;
+        } 
+        catch (\Exception $ex)
+        {
+            return redirect()->back()->with('status', 'danger')->with('message', 'Não há resultados para a sua pesquisa.');
+        }
+
     }
 }
