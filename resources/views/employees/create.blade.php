@@ -19,3 +19,7 @@
     </div>
 </form>
 @endsection
+
+@section('manager_js')
+    
+@endsection

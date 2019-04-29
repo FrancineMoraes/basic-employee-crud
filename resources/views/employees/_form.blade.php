@@ -8,7 +8,7 @@
 </div>
 <div class="form-group col-md-4">
     <label for="phone">Telefone (*)</label>
-    <input type="text" name="phone" value="{{isset($employee->phone) ? $employee->phone : ''}}" class="form-control" required>
+    <input type="text" name="phone" value="{{isset($employee->phone) ? $employee->phone : ''}}" class="form-control js-phone" required>
 </div>
 <div class="form-group col-md-4">
     @isset($employee->image->path)
