@@ -48,7 +48,7 @@ class EmployeeRepository
         {
             return redirect()->back()->with('status', 'danger')->with('message', 'Não foi possível cadastrar o funcionário, preencha os campos e tente novamente.');
         }
-        return view('employees.index')->with('status', 'success')->with('message', 'Funcionário cadastrado com sucesso.');
+        return redirect()->route('employees.index')->with('status', 'success')->with('message', 'Funcionário cadastrado com sucesso.');
     }
 
     /**

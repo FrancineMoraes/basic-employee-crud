@@ -20,9 +20,9 @@ class EmployeeController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
+    {   
         $employees = $this->employee->index();
-
+        
         return view('employees.index', compact('employees'));
     }
 
