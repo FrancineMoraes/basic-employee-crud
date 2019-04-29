@@ -1,14 +1,14 @@
 <div class="form-group col-md-4">
     <label for="name">Nome</label>
-    <input type="text" name="name" value="{{$employee->name or old ('name')}}" class="form-control">
+    <input type="text" name="name" value="{{isset($employee->name) ? $employee->name : '' }}" class="form-control">
 </div>
 <div class="form-group col-md-4">
     <label for="email">Email</label>
-    <input type="email" name="email" value="{{$employee->email or old('email')}}" class="form-control">
+    <input type="email" name="email" value="{{isset($employee->email) ? $employee->email : ''}}" class="form-control">
 </div>
 <div class="form-group col-md-4">
     <label for="phone">Telefone</label>
-    <input type="text" name="phone" value="{{$employee->phone or old('phone')}}" class="form-control">
+    <input type="text" name="phone" value="{{isset($employee->phone) ? $employee->phone : ''}}" class="form-control">
 </div>
 <div class="form-group col-md-4">
     @isset($employee->image->path)
