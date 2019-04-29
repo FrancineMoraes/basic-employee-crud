@@ -16,7 +16,7 @@
         @include('employees._form-address')    
     </div>
     <div class="col-md-12">
-        <button type="submit" class="btn btn-success">Submit</button>
+        <button type="submit" class="btn btn-success">Salvar</button>
     </div>
 </form>
 @endsection

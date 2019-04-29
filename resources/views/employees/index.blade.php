@@ -18,7 +18,7 @@
             </tr>
         </thead>
         <tbody>
-            @foreach($employees as $employee)
+            @forelse($employees as $employee)
                 <tr>
                     <td>{{$employee->name}}</td>
                     <td>{{$employee->email}}</td>
@@ -32,7 +32,9 @@
                         <button class="btn btn-danger bt-del" data-title="Funcionário" data-route="{{route('employees.destroy', $employee->id)}}" data-item="{{$employee->name}}"><i class="fas fa-trash-alt"></i></button>
                     </td>
                 </tr>
-            @endforeach
+            @empty
+                
+            @endforelse
         </tbody>
     </table>
 </div>
