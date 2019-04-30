@@ -6,6 +6,8 @@ Crud básico para administrar funcionários. O sistema tem a intenção de ser i
 
 ### Como iniciar o projeto
 
+Você deve criar um arquivo .env seguindo o modelo .env.example
+
 Você deve rodar: 
 
 <code>composer install</code>
@@ -23,6 +25,8 @@ Basic crud to administrate employees. This system have the intention to be inter
 
 
 ### How to start the project
+
+YOu have to create a .env following the .env.example
 
 You have to run: 
 
