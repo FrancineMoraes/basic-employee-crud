@@ -6,7 +6,11 @@ Crud básico para administrar funcionários. O sistema tem a intenção de ser i
 
 ### Como iniciar o projeto
 
-Você deve criar um arquivo .env seguindo o modelo .env.example
+Clone o projeto
+
+<code> git clone https://github.com/FrancineMoraes/basic-employee-crud.git </code>
+
+Você deve criar um arquivo .env na raiz do projeto seguindo o modelo .env.example
 
 Você deve rodar: 
 
@@ -26,7 +30,11 @@ Basic crud to administrate employees. This system have the intention to be inter
 
 ### How to start the project
 
-YOu have to create a .env following the .env.example
+Clone the project
+
+<code> git clone https://github.com/FrancineMoraes/basic-employee-crud.git </code>
+
+YOu have to create a .env, at the root of the project, following the .env.example
 
 You have to run: 
 
