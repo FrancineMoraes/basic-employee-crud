@@ -34,7 +34,7 @@ Clone the project
 
 <code> git clone https://github.com/FrancineMoraes/basic-employee-crud.git </code>
 
-YOu have to create a .env, at the root of the project, following the .env.example
+You have to create a .env file, at the root of the project, following the .env.example
 
 You have to run: 
 
