@@ -18,6 +18,7 @@
             </tr>
         </thead>
         <tbody>
+
             @forelse($employees as $employee)
                 <tr>
                     <td>{{$employee->name}}</td>
@@ -27,14 +28,17 @@
                     <td>{{$employee->address->number}}</td>
                     <td>{{$employee->address->district}}</td>
                     <td>
-                        <a href="{{route('employees.edit', $employee->id)}}"><button class="btn btn-success"><i class="far fa-edit text-white"></i></button></a>
-                        <a href="{{route('employees.show', $employee->id)}}"><button class="btn btn-primary"><i class="fas fa-eye"></i></button></a>
-                        <button class="btn btn-danger bt-del" data-title="Funcionário" data-route="{{route('employees.destroy', $employee->id)}}" data-item="{{$employee->name}}"><i class="fas fa-trash-alt"></i></button>
-                    </td>
-                </tr>
+                    <a href="{{route('employees.edit', $employee->id)}}"><button class="btn btn-success"><i class="far fa-edit text-white"></i></button></a>
+                    <a href="{{route('employees.show', $employee->id)}}"><button class="btn btn-primary"><i class="fas fa-eye"></i></button></a>
+                    <button class="btn btn-danger bt-del" data-title="Funcionário" data-route="{{route('employees.destroy', $employee->id)}}" data-item="{{$employee->name}}"><i class="fas fa-trash-alt"></i></button>
+                </td>
+            </tr>
             @empty
-                
+                <br>
+                <h4>Não há resultados para a sua pesquisa</h4>
+                <br>
             @endforelse
+            
         </tbody>
     </table>
 </div>

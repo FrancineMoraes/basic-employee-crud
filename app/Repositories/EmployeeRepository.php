@@ -169,13 +169,8 @@ class EmployeeRepository
         try
         {
             $search = $request->search;
-            
-            $employees = Employee::Orwhere('name', 'like', '%'.$search.'%')
-                ->whereHas('address', function ($query) use ($search){
-                    $query->Orwhere('street', 'like', '%'.$search.'%');
-                    $query->Orwhere('district', 'like', '%'.$search.'%');
-                    $query->Orwhere('city', 'like', '%'.$search.'%');
-                })->get();
+                
+            $employees = Employee::Orwhere('name', 'like', '%'.$search.'%')->get();
 
             return $employees;
         } 
