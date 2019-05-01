@@ -33,7 +33,7 @@ class EmployeeRequest extends FormRequest
             'district' => 'required|max:191',
             'city' => 'required|max:191',
             'state' => 'required|max:191',
-            'path' => 'required',
+            'image' => 'required',
         ];
     }
 
@@ -54,7 +54,7 @@ class EmployeeRequest extends FormRequest
             'district.required'  => 'Bairro é um campo obrigatório',
             'city.required'  => 'Cidade é um campo obrigatório',
             'state.required'  => 'Estado é um campo obrigatório',
-            'path.required'  => 'Imagem é um campo obrigatório',
+            'image.required'  => 'Imagem é um campo obrigatório',
         ];
     }
 }

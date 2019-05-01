@@ -3,6 +3,8 @@
 namespace App\Repositories;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\EmployeeEditRequest;
+use App\Http\Requests\EmployeeRequest;
 use Illuminate\Support\Facades\Storage;
 use App\Models\Employee;
 use App\Models\Address;
@@ -29,7 +31,7 @@ class EmployeeRepository
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(EmployeeRequest $request)
     {
         try
         {
@@ -98,7 +100,7 @@ class EmployeeRepository
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(EmployeeEditRequest $request, $id)
     {
     
         try
