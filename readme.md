@@ -20,6 +20,8 @@ Você deve rodar:
 
 <code>php artisan key:generate</code>
 
+<code>php artisan storage:link</code>
+
 <code>php artisan serve</code>
 
 
@@ -43,5 +45,7 @@ You have to run:
 <code>php artisan migrate</code>
 
 <code>php artisan key:generate</code>
+
+<code>php artisan storage:link</code>
 
 <code>php artisan serve</code>
