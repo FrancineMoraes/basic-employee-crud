@@ -20,7 +20,7 @@ class AddColumnAreaOnEmployeesTable extends Migration
     public function up()
     {
         Schema::table($this->tableName, function (Blueprint $table) {
-            $table->string('area', 191);
+            $table->string('area', 191)->after('phone');
         });
     }
 

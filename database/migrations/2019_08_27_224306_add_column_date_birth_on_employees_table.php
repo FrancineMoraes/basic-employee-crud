@@ -20,7 +20,7 @@ class AddColumnDateBirthOnEmployeesTable extends Migration
     public function up()
     {
         Schema::table($this->tableName, function (Blueprint $table) {
-            $table->date('bith_date');
+            $table->date('bith_date')->after('area');;
         });
     }
 
