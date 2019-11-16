@@ -17,4 +17,8 @@ class Employee extends Model
     {
         return $this->hasOne('App\Models\Image');
     }
+
+    public function experiences() {
+        return $this->belongsToMany('App\Models\Experience', 'employees_has_experiences', 'employees_id', 'experiences_id');
+    }
 }

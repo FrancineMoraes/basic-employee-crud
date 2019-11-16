@@ -23,8 +23,8 @@ class EmployeeRepository
         $employees = Employee::get();
 
         return $employees;
-    }    
-    
+    }
+
     /**
      * Store a newly created resource in storage.
      *
@@ -37,7 +37,7 @@ class EmployeeRepository
         {
             $employee = Employee::create($request->all());
             $employee->address()->create($request->all());
-        
+
             if($request->hasFile('image'))
             {
                 $path = Storage::put('employees', $request->file('image'));
@@ -45,7 +45,7 @@ class EmployeeRepository
                     'path' => $path
                 ]);
             }
-        } 
+        }
         catch (\Exception $ex)
         {
             return redirect()->back()->with('status', 'danger')->with('message', 'Não foi possível cadastrar o funcionário, preencha os campos e tente novamente.');
@@ -64,11 +64,11 @@ class EmployeeRepository
         try
         {
             $employee = Employee::findOrFail($id);
-        } 
+        }
         catch (\Exception $ex)
         {
             return redirect()->route('employees.index')->with('status', 'danger')->with('message', 'Não foi possível visualizar o funcionário, atualize a página e tente novamente.');
-        }   
+        }
 
         return $employee;
     }
@@ -83,13 +83,13 @@ class EmployeeRepository
     {
         try
         {
-            $employee = Employee::findOrFail($id);
-        } 
+            $employee = Employee::with('experiences')->findOrFail($id);
+        }
         catch (\Exception $ex)
         {
             return redirect()->back()->with('status', 'danger')->with('message', 'Não foi possível editar o funcionário, atualize a página e tente novamente.');
         }
-        
+
         return $employee;
     }
 
@@ -102,7 +102,7 @@ class EmployeeRepository
      */
     public function update(EmployeeEditRequest $request, $id)
     {
-    
+
         try
         {
             $employee = Employee::findOrFail($id);
@@ -126,12 +126,12 @@ class EmployeeRepository
                     'path' => $path
                 ]);
             }
-        } 
+        }
         catch (\Exception $ex)
         {
             return redirect()->back()->with('status', 'danger')->with('message', 'Não foi possível alterar o funcionário, atualize a página e tente novamente.');
         }
-        
+
         return redirect()->route('employees.index')->with('status', 'success')->with('message', 'Funcionário alterado com sucesso.');
     }
 
@@ -148,13 +148,13 @@ class EmployeeRepository
             $employee = Employee::findOrFail($id);
             $employee->image()->delete();
             $employee->address()->delete();
-            $employee->delete();       
-        } 
+            $employee->delete();
+        }
         catch (\Exception $ex)
         {
             return redirect()->back()->with('status', 'danger')->with('message', 'Não foi possível excluir o funcionário, atualize a página e tente novamente.');
         }
-        
+
         return redirect()->back()->with('status', 'success')->with('message', 'Funcionário deletado com sucesso.');
     }
 
@@ -169,11 +169,11 @@ class EmployeeRepository
         try
         {
             $search = $request->search;
-                
+
             $employees = Employee::Orwhere('name', 'like', '%'.$search.'%')->get();
 
             return $employees;
-        } 
+        }
         catch (\Exception $ex)
         {
             return redirect()->back()->with('status', 'danger')->with('message', 'Não há resultados para a sua pesquisa.');

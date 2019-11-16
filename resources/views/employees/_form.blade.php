@@ -16,7 +16,7 @@
 </div>
 <div class="form-group col-md-6">
     <label for="birth_date">Data de nascimento (*)</label>
-    <input type="date" name="birth_date" value="{{isset($employee->birth_date) ? $employee->birth_date : ''}}" class="form-control" required>
+    <input type="date" name="bith_date" value="{{isset($employee->birth_date) ? $employee->birth_date : ''}}" class="form-control" required>
 </div>
 <div class="form-group col-md-6">
     @isset($employee->image->path)
