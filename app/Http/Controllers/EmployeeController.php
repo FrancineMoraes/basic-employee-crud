@@ -22,9 +22,9 @@ class EmployeeController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {   
+    {
         $employees = $this->employee->index();
-        
+
         return view('employees.index', compact('employees'));
     }
 
@@ -116,5 +116,9 @@ class EmployeeController extends Controller
         {
             return view('employees.index', compact('employees'));
         }
+    }
+
+    public function searchByFilters(Request $request) {
+        return $this->employee->searchByFilters($request);
     }
 }

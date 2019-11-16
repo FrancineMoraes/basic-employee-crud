@@ -180,4 +180,30 @@ class EmployeeRepository
         }
 
     }
+
+    /**
+     * Search the specified resource from storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function searchByFilters(Request $request)
+    {
+        try
+        {
+            $employees = Employee::orWhere('name', $request->search)
+                ->orWhere('email', 'like', '%'.$request->search.'%')
+                ->orWhere('phone', 'like', '%'.$request->search.'%')
+                ->orWHere('area', 'like', '%'.$request->search.'%')
+                ->orWhere('bith_date', 'like', '%'.$request->search.'%')
+                ->get();
+
+            return $employees;
+        }
+        catch (\Exception $ex)
+        {
+            return json_encode("Erro");
+        }
+
+    }
 }
