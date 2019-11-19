@@ -204,6 +204,13 @@ class EmployeeRepository
         {
             return json_encode("Erro");
         }
+    }
 
+    public function getStates() {
+        return Address::select('state')->get();
+    }
+
+    public function getCities(string $state) {
+        return Address::select('city')->where('state', $state)->get();
     }
 }

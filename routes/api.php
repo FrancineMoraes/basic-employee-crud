@@ -18,3 +18,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('/search', 'EmployeeController@searchByFilters');
+Route::get('/states', 'EmployeeController@getStates')->name('employees.states');
+Route::get('/cities', 'EmployeeController@getCities')->name('employees.cities');

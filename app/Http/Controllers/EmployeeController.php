@@ -121,4 +121,12 @@ class EmployeeController extends Controller
     public function searchByFilters(Request $request) {
         return $this->employee->searchByFilters($request);
     }
+
+    public function getCities(Request $request) {
+        return $this->employee->getCities($request->state);
+    }
+
+    public function getStates() {
+        return $this->employee->getStates();
+    }
 }
