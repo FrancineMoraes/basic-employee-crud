@@ -61,7 +61,7 @@ class EmployeeRepository
      */
     public function show($id)
     {
-        return Employee::findOrFail($id);
+        return Employee::with('address', 'experiences')->findOrFail($id);
     }
 
     /**
