@@ -61,16 +61,7 @@ class EmployeeRepository
      */
     public function show($id)
     {
-        try
-        {
-            $employee = Employee::findOrFail($id);
-        }
-        catch (\Exception $ex)
-        {
-            return redirect()->route('employees.index')->with('status', 'danger')->with('message', 'Não foi possível visualizar o funcionário, atualize a página e tente novamente.');
-        }
-
-        return $employee;
+        return Employee::findOrFail($id);
     }
 
     /**

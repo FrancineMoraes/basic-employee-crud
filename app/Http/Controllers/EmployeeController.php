@@ -57,9 +57,14 @@ class EmployeeController extends Controller
      */
     public function show($id)
     {
-        $employee = $this->employee->show($id);
-
-        return view('employees.show', compact('employee'));
+        try {
+            $employee = $this->employee->show($id);
+            return view('employees.show', compact('employee'));
+        }
+        catch (\Exception $ex)
+        {
+        return redirect()->route('employees.index')->with('status', 'danger')->with('message', 'Não foi possível visualizar o funcionário, atualize a página e tente novamente.');
+        }
     }
 
     /**
@@ -128,5 +133,9 @@ class EmployeeController extends Controller
 
     public function getStates() {
         return $this->employee->getStates();
+    }
+
+    public function showEmployee($id) {
+        return $this->employee->show($id);
     }
 }
