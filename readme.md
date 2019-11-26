@@ -49,3 +49,8 @@ You have to run:
 <code>php artisan storage:link</code>
 
 <code>php artisan serve</code>
+
+
+[Proposta de sistema distribuído](sistemas-distribuidos.pdf)
+
+[Documentação](documentacao-de-rotas.pdf)
